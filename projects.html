@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Hemachandiran Giri - DevOps Engineer</title>
+    <meta name="description" content="Explore detailed case studies of DevOps projects and cloud infrastructure solutions by Hemachandiran Giri.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        sage: {
+                            50: '#f6f7f6',
+                            100: '#e3e7e3',
+                            200: '#c7d0c7',
+                            300: '#a3b2a3',
+                            400: '#7a927a',
+                            500: '#5c755c',
+                            600: '#495d49',
+                            700: '#3d4d3d',
+                            800: '#344134',
+                            900: '#2d372d',
+                        },
+                        cream: {
+                            50: '#fefefe',
+                            100: '#fdfcfa',
+                            200: '#faf8f1',
+                            300: '#f6f2e6',
+                            400: '#f0ead6',
+                            500: '#e8e0c2',
+                            600: '#ddd0a8',
+                            700: '#d0be8a',
+                            800: '#c2aa6e',
+                            900: '#b49656',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .section-bg {
+            background-image: url('resources/section-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .project-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(246, 247, 246, 0.8));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: #5c755c;
+            transition: left 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            left: 0;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans bg-cream-50 text-gray-800">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="font-serif font-semibold text-xl text-sage-700">
+                    <a href="index.html">Hemachandiran Giri</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-sage-600 transition-colors">Home</a>
+                    <a href="index.html#about" class="nav-link text-gray-700 hover:text-sage-600 transition-colors">About</a>
+                    <a href="index.html#skills" class="nav-link text-gray-700 hover:text-sage-600 transition-colors">Skills</a>
+                    <a href="projects.html" class="nav-link text-sage-600 font-medium">Projects</a>
+                    <a href="index.html#experience" class="nav-link text-gray-700 hover:text-sage-600 transition-colors">Experience</a>
+                    <a href="index.html#contact" class="nav-link text-gray-700 hover:text-sage-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="section-bg pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center reveal">
+                <h1 class="font-serif text-5xl font-semibold text-sage-800 mb-6">Project Portfolio</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive case studies of cloud infrastructure solutions, DevOps transformations, and international deployments across diverse industries.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-serif text-4xl font-semibold text-sage-800 mb-4">Featured Case Studies</h2>
+                <p class="text-xl text-gray-600">
+                    Deep dives into complex infrastructure challenges and innovative solutions
+                </p>
+            </div>
+
+            <!-- Project 1: GravityCare -->
+            <div class="mb-20 reveal">
+                <div class="bg-gradient-to-r from-sage-50 to-cream-50 rounded-3xl p-8 md:p-12">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-sage-600 rounded-xl flex items-center justify-center mr-4">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m0 0h2M7 7h10M7 11h10M7 15h10"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-3xl font-semibold text-sage-800">GravityCare Healthcare Platform</h3>
+                                    <p class="text-gray-600">Japan • Medical Research • HIPAA Compliance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="prose prose-lg text-gray-700 mb-8">
+                                <p class="text-xl leading-relaxed mb-6">
+                                    Architected a comprehensive cloud infrastructure for a medical research platform managing sensitive patient data for clinical trials. This HIPAA-compliant solution serves major medical research institutes across Japan.
+                                </p>
+                                
+                                <h4 class="font-semibold text-sage-700 mb-4">Key Challenges & Solutions:</h4>
+                                <ul class="space-y-3">
+                                    <li><strong>Data Security:</strong> Implemented end-to-end encryption, VPC isolation, and AWS IAM policies to ensure HIPAA compliance</li>
+                                    <li><strong>Scalability:</strong> Designed auto-scaling ECS clusters to handle varying research workloads and data processing demands</li>
+                                    <li><strong>High Availability:</strong> Deployed across multiple availability zones with automated failover mechanisms</li>
+                                    <li><strong>Data Management:</strong> Created automated backup strategies and disaster recovery procedures</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <h4 class="font-semibold text-sage-700 mb-3">Technologies Used</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">AWS ECS</span>
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">RDS PostgreSQL</span>
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">Lambda</span>
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">API Gateway</span>
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">S3</span>
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">CloudWatch</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-semibold text-sage-700 mb-3">Project Impact</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between">
+                                            <span>Uptime:</span>
+                                            <span class="font-semibold text-sage-700">99.9%</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Cost Reduction:</span>
+                                            <span class="font-semibold text-sage-700">40%</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Data Processing:</span>
+                                            <span class="font-semibold text-sage-700">100GB+/month</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-center">
+                            <div class="bg-white rounded-2xl p-6 shadow-lg">
+                                <div id="gravity-chart" style="width: 300px; height: 200px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: SmartCare -->
+            <div class="mb-20 reveal">
+                <div class="bg-gradient-to-r from-cream-50 to-sage-50 rounded-3xl p-8 md:p-12">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-sage-600 rounded-xl flex items-center justify-center mr-4">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-3xl font-semibold text-sage-800">SmartCare Healthcare Platform</h3>
+                                    <p class="text-gray-600">Sweden • Healthcare Digitization • GDPR Compliance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="prose prose-lg text-gray-700 mb-8">
+                                <p class="text-xl leading-relaxed mb-6">
+                                    Designed and implemented a comprehensive cloud-based healthcare platform that digitalizes and simplifies healthcare integration, serving medical, clinical, and pharmaceutical organizations across Sweden with full GDPR compliance.
+                                </p>
+                                
+                                <h4 class="font-semibold text-sage-700 mb-4">Architecture Highlights:</h4>
+                                <ul class="space-y-3">
+                                    <li><strong>Multi-Region Deployment:</strong> Deployed across EU regions to ensure data residency and compliance</li>
+                                    <li><strong>Microservices Architecture:</strong> Containerized services using EKS for scalability and maintainability</li>
+                                    <li><strong>Real-time Integration:</strong> Implemented event-driven architecture for seamless healthcare data flow</li>
+                                    <li><strong>Security Framework:</strong> End-to-end encryption, role-based access control, and audit logging</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-sage-700 mb-3">Architecture Components</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-sage-600 rounded-full mr-3"></div>
+                                            <span>Amazon EKS for container orchestration</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-sage-600 rounded-full mr-3"></div>
+                                            <span>PostgreSQL with read replicas</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-sage-600 rounded-full mr-3"></div>
+                                            <span>Redis for caching and session management</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-sage-600 rounded-full mr-3"></div>
+                                            <span>ELB for load balancing and SSL termination</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-semibold text-sage-700 mb-3">Performance Metrics</h4>
+                                    <div class="space-y-3">
+                                        <div class="bg-white p-3 rounded-lg">
+                                            <div class="text-2xl font-bold text-sage-700">100K+</div>
+                                            <div class="text-sm text-gray-600">Healthcare Professionals</div>
+                                        </div>
+                                        <div class="bg-white p-3 rounded-lg">
+                                            <div class="text-2xl font-bold text-sage-700">99.95%</div>
+                                            <div class="text-sm text-gray-600">System Availability</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-center">
+                            <div class="bg-white rounded-2xl p-6 shadow-lg">
+                                <img src="https://via.placeholder.com/300x200/e6fffa/234e52?text=SmartCare+Architecture" alt="SmartCare Architecture" class="rounded-lg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Amazon Subscribe & Save -->
+            <div class="mb-20 reveal">
+                <div class="bg-gradient-to-r from-sage-50 to-cream-50 rounded-3xl p-8 md:p-12">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-sage-600 rounded-xl flex items-center justify-center mr-4">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-3xl font-semibold text-sage-800">Amazon Subscribe & Save</h3>
+                                    <p class="text-gray-600">Global • E-commerce • Microservices</p>
+                                </div>
+                            </div>
+                            
+                            <div class="prose prose-lg text-gray-700 mb-8">
+                                <p class="text-xl leading-relaxed mb-6">
+                                    As a DevOps Engineer at Amazon, I contributed to the architecture and optimization of the Subscribe & Save microservice, a critical component handling millions of subscription transactions globally with fault-tolerant design patterns and auto-scaling capabilities.
+                                </p>
+                                
+                                <h4 class="font-semibold text-sage-700 mb-4">Technical Contributions:</h4>
+                                <ul class="space-y-3">
+                                    <li><strong>Auto-scaling Implementation:</strong> Designed dynamic scaling policies based on traffic patterns and queue depths</li>
+                                    <li><strong>Fault Tolerance:</strong> Implemented circuit breakers and retry mechanisms for service resilience</li>
+                                    <li><strong>Database Optimization:</strong> Optimized DynamoDB queries and implemented caching strategies</li>
+                                    <li><strong>Monitoring & Alerting:</strong> Established comprehensive monitoring using CloudWatch and custom metrics</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-sage-700 mb-3">Key Technologies</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">Java Spring Boot</span>
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">DynamoDB</span>
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">SQS</span>
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">SNS</span>
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">Lambda</span>
+                                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">CloudWatch</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-semibold text-sage-700 mb-3">Global Impact</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between">
+                                            <span>Daily Transactions:</span>
+                                            <span class="font-semibold text-sage-700">Millions</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Global Regions:</span>
+                                            <span class="font-semibold text-sage-700">15+</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Response Time:</span>
+                                            <span class="font-semibold text-sage-700">&lt;100ms</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-center">
+                            <div class="bg-white rounded-2xl p-6 shadow-lg">
+                                <div id="amazon-chart" style="width: 300px; height: 200px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Projects Grid -->
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-serif text-4xl font-semibold text-sage-800 mb-4">Additional Projects</h2>
+                <p class="text-xl text-gray-600">
+                    More solutions across B2B platforms, analytics tools, and healthcare networks
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Bizvibe Project -->
+                <div class="project-card rounded-2xl p-6 hover-lift reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-sage-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Bizvibe B2B Platform</h3>
+                            <p class="text-sm text-gray-500">Canada/UK • B2B Marketplace</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Modern B2B platform serving 1M+ users with optimized CI/CD pipelines and database performance improvements across international regions.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">Jenkins</span>
+                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">MySQL</span>
+                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">Terraform</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm text-gray-500">
+                        <span>1M+ Users</span>
+                        <span>Multi-Region</span>
+                    </div>
+                </div>
+
+                <!-- Quantzig Project -->
+                <div class="project-card rounded-2xl p-6 hover-lift reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-sage-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Quantzig Analytics</h3>
+                            <p class="text-sm text-gray-500">Global • Data Analytics</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Market research and analytics tool with global deployment across 5 countries. Implemented data pipeline automation and real-time processing capabilities.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">Apache Spark</span>
+                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">Kafka</span>
+                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">Elasticsearch</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm text-gray-500">
+                        <span>5 Countries</span>
+                        <span>Real-time</span>
+                    </div>
+                </div>
+
+                <!-- HealthoMax Project -->
+                <div class="project-card rounded-2xl p-6 hover-lift reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-sage-600 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">HealthoMax Network</h3>
+                            <p class="text-sm text-gray-500">Sweden • Social Healthcare</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Social networking platform for health professionals with secure communication features. Implemented GDPR-compliant data handling and encryption.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">Node.js</span>
+                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        <span class="bg-sage-100 text-sage-700 px-3 py-1 rounded-full text-sm">WebRTC</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm text-gray-500">
+                        <span>GDPR Compliant</span>
+                        <span>Secure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section-bg py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <h2 class="font-serif text-4xl font-semibold text-sage-800 mb-6">Ready to Start Your Project?</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Let's discuss how I can help transform your infrastructure and accelerate your digital transformation journey.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#contact" class="bg-sage-600 hover:bg-sage-700 text-white px-8 py-3 rounded-lg font-medium transition-all hover-lift">
+                    Get In Touch
+                </a>
+                <a href="resources/Hemachandiran_Giri_International_Resume.html" download class="border-2 border-sage-600 text-sage-600 hover:bg-sage-600 hover:text-white px-8 py-3 rounded-lg font-medium transition-all hover-lift">
+                    Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sage-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center">
+                <div class="font-serif text-2xl font-semibold mb-4">Hemachandiran Giri</div>
+                <p class="text-sage-200 mb-6">AWS Certified DevOps Engineer | Cloud Infrastructure Specialist</p>
+                
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://github.com/hemachandiran1102" target="_blank" 
+                       class="text-sage-200 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:hemachandiran1102@hotmail.com" 
+                       class="text-sage-200 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="border-t border-sage-700 pt-6">
+                    <p class="text-sage-300 text-sm">
+                        © 2024 Hemachandiran Giri. Available for international opportunities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize scroll reveal
+        document.addEventListener('DOMContentLoaded', function() {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            revealElements.forEach(element => {
+                revealObserver.observe(element);
+            });
+
+            // Initialize charts
+            initializeCharts();
+        });
+
+        function initializeCharts() {
+            // GravityCare Chart
+            const gravityChart = echarts.init(document.getElementById('gravity-chart'));
+            gravityChart.setOption({
+                title: {
+                    text: 'System Performance',
+                    textStyle: { color: '#5c755c', fontSize: 14 }
+                },
+                series: [{
+                    type: 'gauge',
+                    data: [{ value: 99.9, name: 'Uptime %' }],
+                    min: 95,
+                    max: 100,
+                    axisLine: { lineStyle: { color: [[1, '#5c755c']] } },
+                    detail: { textStyle: { color: '#5c755c', fontSize: 20 } }
+                }]
+            });
+
+            // Amazon Chart
+            const amazonChart = echarts.init(document.getElementById('amazon-chart'));
+            amazonChart.setOption({
+                title: {
+                    text: 'Global Traffic',
+                    textStyle: { color: '#5c755c', fontSize: 14 }
+                },
+                series: [{
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    data: [
+                        { value: 35, name: 'North America', itemStyle: { color: '#5c755c' } },
+                        { value: 28, name: 'Europe', itemStyle: { color: '#7a927a' } },
+                        { value: 25, name: 'Asia Pacific', itemStyle: { color: '#a3b2a3' } },
+                        { value: 12, name: 'Others', itemStyle: { color: '#c7d0c7' } }
+                    ],
+                    label: { show: false }
+                }]
+            });
+
+            // Make charts responsive
+            window.addEventListener('resize', () => {
+                gravityChart.resize();
+                amazonChart.resize();
+            });
+        }
+    </script>
+</body>
+</html>
