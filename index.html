@@ -16,172 +16,147 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
     
     <!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                fontFamily: {
-                    'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    'serif': ['Playfair Display', 'serif'],
-                },
-                colors: {
-                    amazon: {
-                        50: '#fef7f0',
-                        100: '#feebd9',
-                        200: '#fcd4b0',
-                        300: '#fab670',
-                        400: '#f7933f',
-                        500: '#ff9900', // Amazon Orange
-                        600: '#e67e00',
-                        700: '#bf6900',
-                        800: '#9c5400',
-                        900: '#7f4400',
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
                     },
-                    slate: {
-                        50: '#f8fafc',
-                        100: '#f1f5f9',
-                        200: '#e2e8f0',
-                        300: '#cbd5e1',
-                        400: '#94a3b8',
-                        500: '#64748b',
-                        600: '#475569',
-                        700: '#334155',
-                        800: '#1e293b',
-                        900: '#0f172a',
+                    colors: {
+                        amazon: {
+                            50: '#fef7f0',
+                            100: '#feebd9',
+                            200: '#fcd4b0',
+                            300: '#fab670',
+                            400: '#f7933f',
+                            500: '#ff9900', // Amazon Orange
+                            600: '#e67e00',
+                            700: '#bf6900',
+                            800: '#9c5400',
+                            900: '#7f4400',
+                        },
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
                     }
                 }
             }
         }
-    }
-</script>
-
-<style>
-    .hero-bg {
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        transition: background-image 0.5s ease-in-out; /* Optional fade effect */
-    }
+    </script>
     
-    .glass-effect {
-        backdrop-filter: blur(10px);
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .text-shadow {
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    
-    .hover-lift {
-        transition: all 0.3s ease;
-    }
-    
-    .hover-lift:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
-    
-    .skill-bar {
-        height: 8px;
-        background: linear-gradient(90deg, #ff9900, #fab670);
-        border-radius: 4px;
-        transition: width 1s ease-in-out;
-    }
-    
-    .project-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 153, 0, 0.2);
-    }
-    
-    .nav-link {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: -100%;
-        width: 100%;
-        height: 2px;
-        background: #ff9900;
-        transition: left 0.3s ease;
-    }
-    
-    .nav-link:hover::after {
-        left: 0;
-    }
-    
-    .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
-    }
-    
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .floating {
-        animation: float 6s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-    }
-    
-    .amazon-gradient {
-        background: linear-gradient(135deg, #ff9900, #232f3e);
-    }
-    
-    .code-block {
-        background: #1e293b;
-        color: #e2e8f0;
-        font-family: 'Courier New', monospace;
-        border-radius: 8px;
-        padding: 20px;
-        margin: 20px 0;
-        overflow-x: auto;
-    }
-    
-    .metric-card {
-        background: linear-gradient(135deg, #ff9900, #f7933f);
-        color: white;
-    }
-</style>
+    <style>
+        .hero-bg {
+            background-image: url('resources/hero-main.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: linear-gradient(90deg, #ff9900, #fab670);
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .project-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 153, 0, 0.2);
+        }
+        
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: #ff9900;
+            transition: left 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            left: 0;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .amazon-gradient {
+            background: linear-gradient(135deg, #ff9900, #232f3e);
+        }
+        
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            font-family: 'Courier New', monospace;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #ff9900, #f7933f);
+            color: white;
+        }
+    </style>
 </head>
 <body class="font-sans bg-slate-50 text-slate-800 overflow-x-hidden">
-    <!-- Example hero section with slideshow background -->
-    <div id="hero-section" class="hero-bg h-screen">
-        <!-- Your content here -->
-    </div>
-
-    <script>
-        // Array of background image URLs (replace with your own paths)
-        const backgrounds = [
-            'url("resources/hero-main.jpg")',
-            'url("resources/hero-main1.HEIC")', // Add more images
-            'url("resources/hero-main2.DNG")'
-        ];
-
-        let currentIndex = 0;
-        const heroElement = document.getElementById('hero-section');
-        const intervalTime = 30000; // Change every 30 seconds
-
-        function changeBackground() {
-            currentIndex = (currentIndex + 1) % backgrounds.length;
-            heroElement.style.backgroundImage = backgrounds[currentIndex];
-        }
-
-        // Start the slideshow
-        setInterval(changeBackground, intervalTime);
-    </script>
     
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 glass-effect">
